@@ -1,5 +1,5 @@
 .large-hero {
-    position: fixed;
+    position: relative;
     border-bottom: 10px solid #2f5572; 
    
     &--image {
