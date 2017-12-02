@@ -11088,170 +11088,247 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_MobileMenu__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_RevealOnScroll__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_StickyHeader__ = __webpack_require__(5);
 
 
+var _jquery = __webpack_require__(0);
 
+var _jquery2 = _interopRequireDefault(_jquery);
 
+var _MobileMenu = __webpack_require__(3);
 
-new __WEBPACK_IMPORTED_MODULE_1__modules_MobileMenu__["a" /* default */];
-new __WEBPACK_IMPORTED_MODULE_2__modules_RevealOnScroll__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()(".feature-item"), "80%");
-new __WEBPACK_IMPORTED_MODULE_2__modules_RevealOnScroll__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()(".testimonial"), "100%");
-new __WEBPACK_IMPORTED_MODULE_3__modules_StickyHeader__["a" /* default */];
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+var _RevealOnScroll = __webpack_require__(4);
+
+var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
+
+var _StickyHeader = __webpack_require__(5);
+
+var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
+
+var _Modal = __webpack_require__(7);
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+new _MobileMenu2.default();
+new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "80%");
+new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "100%");
+new _StickyHeader2.default();
+new _Modal2.default();
 
 /***/ }),
 /* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 
 
-class MobileMenu {
-    constructor() {
-        this.siteHeader = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header");
-        this.menuIcon = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header__menu-icon");
-        this.menuContent = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header__menu-content");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MobileMenu = function () {
+    function MobileMenu() {
+        _classCallCheck(this, MobileMenu);
+
+        this.siteHeader = (0, _jquery2.default)(".site-header");
+        this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+        this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
         this.events();
     }
 
-    events() {
-        this.menuIcon.click(this.toggleTheMenu.bind(this));
-    }
+    _createClass(MobileMenu, [{
+        key: "events",
+        value: function events() {
+            this.menuIcon.click(this.toggleTheMenu.bind(this));
+        }
+    }, {
+        key: "toggleTheMenu",
+        value: function toggleTheMenu() {
+            this.menuContent.toggleClass("site-header__menu-content--is-visible");
+            this.siteHeader.toggleClass("site-header--is-expanded");
+            this.menuIcon.toggleClass("site-header__menu-icon--close-x");
+        }
+    }]);
 
-    toggleTheMenu() {
-        this.menuContent.toggleClass("site-header__menu-content--is-visible");
-        this.siteHeader.toggleClass("site-header--is-expanded");
-        this.menuIcon.toggleClass("site-header__menu-icon--close-x");
-    }
-}
+    return MobileMenu;
+}();
 
-/* harmony default export */ __webpack_exports__["a"] = (MobileMenu);
+exports.default = MobileMenu;
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_waypoints_lib_noframework_waypoints__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_waypoints_lib_noframework_waypoints___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_waypoints_lib_noframework_waypoints__);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-class RevealOnScroll {
-    constructor(elements, offset) {
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RevealOnScroll = function () {
+    function RevealOnScroll(elements, offset) {
+        _classCallCheck(this, RevealOnScroll);
+
         this.itemsToReveal = elements;
         this.offsetPercentage = offset;
         this.hideInitially();
-        this.createWaypoints();        
-    }
-    
-    hideInitially() {
-        this.itemsToReveal.addClass("reveal-item");
+        this.createWaypoints();
     }
 
-    createWaypoints() {
-        var that = this;
-        this.itemsToReveal.each(function () {
-            var currentItem = this;
-            new Waypoint({
-                element: currentItem,
-                handler: function(){
-                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(currentItem).addClass("reveal-item--is-visible");
-                },
-                offset: that.offsetPercentage
+    _createClass(RevealOnScroll, [{
+        key: "hideInitially",
+        value: function hideInitially() {
+            this.itemsToReveal.addClass("reveal-item");
+        }
+    }, {
+        key: "createWaypoints",
+        value: function createWaypoints() {
+            var that = this;
+            this.itemsToReveal.each(function () {
+                var currentItem = this;
+                new Waypoint({
+                    element: currentItem,
+                    handler: function handler() {
+                        (0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
+                    },
+                    offset: that.offsetPercentage
+                });
             });
-        });
-    }
-}
+        }
+    }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (RevealOnScroll);
+    return RevealOnScroll;
+}();
+
+exports.default = RevealOnScroll;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_waypoints_lib_noframework_waypoints__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_waypoints_lib_noframework_waypoints___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_waypoints_lib_noframework_waypoints__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery_smooth_scroll__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery_smooth_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_jquery_smooth_scroll__);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-class StickyHeader {
-    constructor() {
-        this.siteHeader = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header");
-        this.headerTriggerElement = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".large-hero__subtitle");
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+var _jquerySmoothScroll = __webpack_require__(6);
+
+var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var StickyHeader = function () {
+    function StickyHeader() {
+        _classCallCheck(this, StickyHeader);
+
+        this.siteHeader = (0, _jquery2.default)(".site-header");
+        this.headerTriggerElement = (0, _jquery2.default)(".large-hero__subtitle");
         this.createHeaderWaypoint();
-        this.pageSections = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".page-section");
-        this.headerLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".primary-nav a");
+        this.pageSections = (0, _jquery2.default)(".page-section");
+        this.headerLinks = (0, _jquery2.default)(".primary-nav a");
         this.createPageSectionWaypoints();
         this.addSmoothScrolling();
     }
 
-    addSmoothScrolling(){
-        this.headerLinks.smoothScroll();
-    }
-
-    createHeaderWaypoint() {
-        var that = this;
-        new Waypoint({
-            element: this.headerTriggerElement[0],
-            handler: function (direction) {
-                if (direction == "down") {
-                    that.siteHeader.addClass("site-header--dark");
-                } else
-                    that.siteHeader.removeClass("site-header--dark");
-            }
-        });
-    }
-
-    createPageSectionWaypoints() {
-        var that = this;
-        this.pageSections.each(function () {
-            var currentPageSection = this;
+    _createClass(StickyHeader, [{
+        key: "addSmoothScrolling",
+        value: function addSmoothScrolling() {
+            this.headerLinks.smoothScroll();
+        }
+    }, {
+        key: "createHeaderWaypoint",
+        value: function createHeaderWaypoint() {
+            var that = this;
             new Waypoint({
-                element: currentPageSection,
-                handler: function (direction) {
+                element: this.headerTriggerElement[0],
+                handler: function handler(direction) {
                     if (direction == "down") {
-                        var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-                        that.headerLinks.removeClass("is-current-link");
-                        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(matchingHeaderLink).addClass("is-current-link");
-                    }
-                },
-                offset: "20%"
+                        that.siteHeader.addClass("site-header--dark");
+                    } else that.siteHeader.removeClass("site-header--dark");
+                }
             });
-            new Waypoint({
-                element: currentPageSection,
-                handler: function (direction) {
-                    if (direction == "up") {
-                        var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
-                        that.headerLinks.removeClass("is-current-link");
-                        __WEBPACK_IMPORTED_MODULE_0_jquery___default()(matchingHeaderLink).addClass("is-current-link");
-                    }
-                },
-                offset: "-80%"
+        }
+    }, {
+        key: "createPageSectionWaypoints",
+        value: function createPageSectionWaypoints() {
+            var that = this;
+            this.pageSections.each(function () {
+                var currentPageSection = this;
+                new Waypoint({
+                    element: currentPageSection,
+                    handler: function handler(direction) {
+                        if (direction == "down") {
+                            var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
+                            that.headerLinks.removeClass("is-current-link");
+                            (0, _jquery2.default)(matchingHeaderLink).addClass("is-current-link");
+                        }
+                    },
+                    offset: "20%"
+                });
+                new Waypoint({
+                    element: currentPageSection,
+                    handler: function handler(direction) {
+                        if (direction == "up") {
+                            var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
+                            that.headerLinks.removeClass("is-current-link");
+                            (0, _jquery2.default)(matchingHeaderLink).addClass("is-current-link");
+                        }
+                    },
+                    offset: "-80%"
+                });
             });
-        });
-    }
-}
+        }
+    }]);
 
-/* harmony default export */ __webpack_exports__["a"] = (StickyHeader);
+    return StickyHeader;
+}();
+
+exports.default = StickyHeader;
 
 /***/ }),
 /* 6 */
@@ -11619,6 +11696,74 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }));
 
 
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Modal = function () {
+    function Modal() {
+        _classCallCheck(this, Modal);
+
+        this.openModalButton = (0, _jquery2.default)(".open-modal");
+        this.modal = (0, _jquery2.default)(".modal");
+        this.closeModalButton = (0, _jquery2.default)(".modal__close");
+        this.events();
+    }
+
+    _createClass(Modal, [{
+        key: "events",
+        value: function events() {
+            //clicking the open modal button
+            this.openModalButton.click(this.openModal.bind(this));
+
+            //clicking the x close modal button
+            this.closeModalButton.click(this.closeModal.bind(this));
+
+            //pushes any key
+            (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
+        }
+    }, {
+        key: "keyPressHandler",
+        value: function keyPressHandler(e) {
+            if (e.keyCode == 27) {
+                this.closeModal();
+            }
+        }
+    }, {
+        key: "openModal",
+        value: function openModal() {
+            this.modal.addClass("modal--is-visible");
+            return false;
+        }
+    }, {
+        key: "closeModal",
+        value: function closeModal() {
+            this.modal.removeClass("modal--is-visible");
+        }
+    }]);
+
+    return Modal;
+}();
+
+exports.default = Modal;
 
 /***/ })
 /******/ ]);
